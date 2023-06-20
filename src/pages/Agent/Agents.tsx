@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import { useState, useEffect } from "react";
-import Agent from "./Agent";
+import Agent from "../../components/Agents/Agent";
 import { IAgent } from "../../types/Agent";
 import axios from "axios";
-import './Agents.css'
+
 
 const Agents: FC = () => {
   const [agents, setAgents] = useState<IAgent[]>([]);
@@ -17,7 +17,7 @@ const Agents: FC = () => {
   }, []);
 
   return (
-    <div className="agents">
+    <div className="flex justify-center">
       {agents.map((agent) => (
         <Agent key={agent.id} agent={agent} />
       ))}
